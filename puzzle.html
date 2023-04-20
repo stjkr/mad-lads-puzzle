@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Image Grid</title>
+	<style>
+        .container {
+			display: grid;
+			grid-template-columns: repeat(100, 1fr);
+			grid-template-rows: repeat(5, 1fr);
+            gap: -20px;
+		}
+
+		.container img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+            clip-path: inset(0px 2.4px);
+		}
+	</style>
+</head>
+<body>
+	<div class="container"></div>
+</body>
+</html>
+<script>
+    const imageContainer = document.getElementsByClassName('container')[0];
+      for (let i = 1; i < 10000; i++) {
+        const imageUrl = "https://vcped2p4pgcew6b7wxnytrwjieojg4n4rnuv7dsa2a2supg5vdsa.arweave.net/qJ5B6fx5hEt4P7XbicbJQRyTcbyLaV-OQNA1KjzdqOQ/"+i+".png";
+
+        // Create a new image element
+        const image = document.createElement('img');
+        image.src = imageUrl;
+
+        imageContainer.appendChild(image);
+      }
+</script>
